@@ -8,7 +8,20 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="container">
+    <% if flash[:notice] %>
+      <div class="alert alert-info">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

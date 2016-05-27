@@ -1,0 +1,17 @@
+<h1>This is an edit page for Players</h1>
+
+<%= form_for @player do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+  <% end %>

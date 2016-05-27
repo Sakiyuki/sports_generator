@@ -1,0 +1,11 @@
+<h1>Sports list</h1>
+
+<div class="col-md-8">
+  <% @sports.each do |s| %>
+    <h3><%= link_to s.name, s %></h3>
+    <p><%= s.description %></p>
+  <% end %>
+</div>
+<div class="col-md-4">
+  <%= link_to "create sport", new_sport_path, class:"btn btn-success" %>
+</div>

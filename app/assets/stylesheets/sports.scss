@@ -1,0 +1,19 @@
+// Place all the styles related to the Sports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+input[type="submit"]
+{
+  background:url(mickey.png);
+  background-size: 34.4px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.submit-button {
+  height: 60px;
+  width: 40px;
+  border-radius: 5px;
+  border: 1px 1px;
+}

@@ -1,0 +1,10 @@
+<h1><%= @player.name %></h1>
+
+<div class="col-md-8">
+  <p><%= @player.number %></p>
+</div>
+
+<div class="col-md-4">
+  <%= link_to "edit player", edit_player_path(@player), class:"btn btn-success" %>
+  <%= link_to "delete player", player_path(@player), method: :delete, class:"btn btn-success" %>
+</div>

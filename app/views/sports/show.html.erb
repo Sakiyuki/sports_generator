@@ -1,0 +1,10 @@
+<h1><%= @sport.name %></h1>
+
+<div class="col-md-8">
+  <p><%= @sport.description %></p>
+</div>
+
+<div class="col-md-4">
+  <%= link_to "edit sport", edit_sport_path(@sport), class:"btn btn-success" %>
+  <%= link_to "delete sport", sport_path(@sport), method: :delete, class:"btn btn-success " %>
+</div>

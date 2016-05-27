@@ -1,0 +1,11 @@
+<h1>Players list</h1>
+
+<div class="col-md-8">
+  <% @players.each do |p| %>
+  <h3><%= link_to p.name, p %></h3>
+  <p><%= p.number %></p>
+  <% end %>
+</div>
+<div class="col-md-4">
+  <%= link_to "create player", new_player_path, class:"btn btn-success" %>
+</div>

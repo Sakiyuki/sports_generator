@@ -19,6 +19,7 @@ class TeamsController < ApplicationController
     @team = Team.new
     @team.name = params[:team][:name]
     @team.description = params[:team][:description]
+    @team.sport_id = params[:team][:sport_id]
 
     if @team.save
       flash[:notice] = "Team successfully saved."
@@ -33,6 +34,9 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @team.name = params[:team][:name]
     @team.description = params[:team][:description]
+    # @team.sport = params[:team][:sport]
+    @team.sport_id = params[:team][:sport_id]
+    # @team.sport = Sport.find(params[:team][:sport_id])
 
     if @team.save
       flash[:notice] = "Team successfully updated"

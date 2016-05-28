@@ -20,6 +20,11 @@
     <%= f.text_area :description, class: 'form-control' %>
   <% end %>
 
+  <%= form_group_tag(team.errors[:sport_id]) do %>
+    <%= f.label :sport %>
+    <%= f.select :sport_id, Sport.all.collect {|s| [ s.name, s.id]} , {include_blank: true}, class: 'form-control' %>
+  <% end %>
+
 
   <div class="form-group">
     <%= f.submit "", class: "submit-button" %>

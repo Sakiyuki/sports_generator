@@ -1,0 +1,12 @@
+<h1>Teams List</h1>
+
+<div class="col-md-8">
+  <% @teams.each do |t| %>
+    <h3><%= link_to t.name, t %></h3>
+    <p><%= t.description %></p>
+    <% end %>
+</div>
+
+<div class="col-md-4">
+  <%= link_to "create team", new_team_path, class:"btn btn-success" %>
+</div>

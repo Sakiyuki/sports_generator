@@ -1,0 +1,30 @@
+<%= form_for player do |f| %>
+  <% if player.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(player.errors.count, "Error")%>.</h4>
+      <ul>
+        <% player.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_group_tag(player.errors[:name]) do %>
+  <% f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+<% end %>
+
+<%= form_group_tag(player.errors[:number]) do %>
+  <%= f.label :number %>
+  <%= f.text_area :number, class: 'form-control' %>
+<% end %>
+
+
+  <div class="form-group">
+    <%= f.submit "", class: "submit-button" %>
+  </div>
+<% end %>
+
+
+  

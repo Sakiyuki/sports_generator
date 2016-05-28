@@ -1,0 +1,10 @@
+<h1><%= @team.name %></h1>
+
+<div class="col-md-8">
+  <p><%= @team.description %></p>
+</div>
+
+<div class="col-md-4">
+  <%= link_to "edit team", edit_team_path(@team), class:"btn btn-success" %>
+  <%= link_to "delete team", team_path(@team), method: :delete, class:"btn btn-success " %>
+</div>

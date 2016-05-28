@@ -1,0 +1,27 @@
+<%= form_for team do |f| %>
+  <% if team.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(team.errors.count, "Error")%>. </h4>
+      <ul>
+        <% team.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(team.errors[:name]) do %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  <% end %>
+
+  <%= form_group_tag(team.errors[:description]) do %>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  <% end %>
+
+
+  <div class="form-group">
+    <%= f.submit "", class: "submit-button" %>
+  </div>
+<% end %>

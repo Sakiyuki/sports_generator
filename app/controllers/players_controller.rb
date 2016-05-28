@@ -16,7 +16,17 @@ class PlayersController < ApplicationController
   end
 
   def update
-    
+    @player = Player.find(params[:id])
+    @player.name = params[:player][:name]
+    @player.number = params[:player][:number]
+
+    if @player.save
+      flash[:notice] = "Player successfully updated"
+      redirect_to @player
+    else
+      flash[:error] = "Player could not be saved"
+      render :edit
+    end
   end
 
 
@@ -29,7 +39,21 @@ class PlayersController < ApplicationController
       flash[:notice] = "Player successfully saved."
       redirect_to "/players"
     else
+      flash[:notice] = "Player could not be saved successgully"
+      render :new
+    end
 
+  end
+
+    def destroy
+    @player = Player.find(params[:id])
+
+    if @player.destroy
+      flash[:notice] = "\"#{@player.name}\" was deleted successufully."
+      redirect_to action: :index
+    else
+      flash.now[:alert] = "There was an error deleting the player."
+      render :show
     end
 
   end

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :players
   resources :sports
+  resources :teams
 
   get 'welcome/index'
   get 'welcome/about'

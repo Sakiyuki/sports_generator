@@ -8,6 +8,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  sport_id    :integer
+#  player_id   :integer
 #
 
 require 'rails_helper'

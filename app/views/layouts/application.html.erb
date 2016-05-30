@@ -9,6 +9,14 @@
 <body>
 
   <div class="container">
+    <nav class="navbar">
+      <ul class="nav navbar-nav">
+        <% Sport.all.each do |s| %>
+          <li><%= link_to s.name, s %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
     <% if flash[:notice] %>
       <div class="alert alert-info">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

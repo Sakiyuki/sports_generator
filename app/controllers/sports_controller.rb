@@ -5,6 +5,7 @@ class SportsController < ApplicationController
 
   def show
     @sport = Sport.find(params[:id])
+
   end
 
   def new
@@ -19,6 +20,7 @@ class SportsController < ApplicationController
     @sport = Sport.find(params[:id])
     @sport.name = params[:sport][:name]
     @sport.description = params[:sport][:description]
+  
 
     if @sport.save
       flash[:notice] = "Sport successfully updated"
@@ -44,5 +46,6 @@ class SportsController < ApplicationController
     end
 
   end
+
 
 end

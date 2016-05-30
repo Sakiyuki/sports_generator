@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :players
-  resources :sports
-  resources :teams
+  resources :teams, only: [] do
+    resources :players
+  end
+
+  resources :sports do
+    resources :teams
+  end
+
 
   get 'welcome/index'
   get 'welcome/about'

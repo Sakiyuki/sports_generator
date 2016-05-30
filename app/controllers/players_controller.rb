@@ -19,6 +19,7 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     @player.name = params[:player][:name]
     @player.number = params[:player][:number]
+    @player.team_id = params[:player][:team_id]
 
     if @player.save
       flash[:notice] = "Player successfully updated"
@@ -34,6 +35,7 @@ class PlayersController < ApplicationController
     @player = Player.new
     @player.name = params[:player][:name]
     @player.number = params[:player][:number]
+    @player.team_id = params[:player][:team_id]
 
     if @player.save
       flash[:notice] = "Player successfully saved."
@@ -42,7 +44,6 @@ class PlayersController < ApplicationController
       flash[:notice] = "Player could not be saved successgully"
       render :new
     end
-
   end
 
     def destroy
@@ -55,7 +56,5 @@ class PlayersController < ApplicationController
       flash.now[:alert] = "There was an error deleting the player."
       render :show
     end
-
   end
-
 end

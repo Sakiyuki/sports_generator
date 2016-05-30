@@ -1,4 +1,4 @@
-<%= form_for team do |f| %>
+<%= form_for [sport, team] do |f| %>
   <% if team.errors.any? %>
     <div class="alert alert-danger">
       <h4><%= pluralize(team.errors.count, "Error")%>. </h4>
@@ -8,7 +8,7 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
   <%= form_group_tag(team.errors[:name]) do %>
     <%= f.label :name %>
@@ -20,13 +20,9 @@
     <%= f.text_area :description, class: 'form-control' %>
   <% end %>
 
-  <%= form_group_tag(team.errors[:sport_id]) do %>
-    <%= f.label :sport %>
-    <%= f.select :sport_id, Sport.all.collect {|s| [ s.name, s.id]} , {include_blank: true}, class: 'form-control' %>
-  <% end %>
-
 
   <div class="form-group">
     <%= f.submit "", class: "submit-button" %>
   </div>
+
 <% end %>

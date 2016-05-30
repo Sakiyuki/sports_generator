@@ -2,10 +2,10 @@
 
 <div class="col-md-8">
   <p><%= @team.description %></p>
-  <p><%= @team.sport.name %></p>
+  <p><%= @sport ? @sport.name : "No assigned sport." %></p>
 </div>
 
 <div class="col-md-4">
-  <%= link_to "edit team", edit_team_path(@team), class:"btn btn-success" %>
-  <%= link_to "delete team", team_path(@team), method: :delete, class:"btn btn-success " %>
+  <%= link_to "edit team", edit_sport_team_path(@sport, @team), class:"btn btn-success" %>
+  <%= link_to "delete team", sport_team_path(@sport, @team), method: :delete, class:"btn btn-success " %>
 </div>
